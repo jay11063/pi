@@ -47,7 +47,10 @@ Jaeyoon Lee
 * 0.1
     * Initial Release
 
+<!-- LICENSE -->
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
