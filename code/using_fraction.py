@@ -7,11 +7,12 @@ from math import log10
 import time
 
 # This function calculates a sum of fractions in given range
-def calc_pi_fraction(end:int) -> Fraction:
+def calc_pi_fraction(Range:tuple[int,int]) -> Fraction:
+    # ex) [1:100],[101:200],...
     # start = time.time()
     pi = Fraction()
-    k = 1+end*100
-    while k <= (end+1)*100: # ex) [1:100],[101:200],...
+    k = Range[0]
+    while k <= Range[1]:
         pi += Fraction((16*(-1)**(k-1)),(2*k-1)*5**(2*k-1)) - Fraction((4*(-1)**(k-1)),(2*k-1)*239**(2*k-1))
         k += 1
     # print(end,'CALCULATE_TIME:',time.time()-start)
@@ -40,7 +41,7 @@ def sum_of_fracs(fracs:list[Fraction]) -> Fraction:
 
 def main():
     start = time.time()
-    pi_list = frac_to_dec_list(calc_pi_fraction(0))
+    pi_list = frac_to_dec_list(calc_pi_fraction((1,100)))
     print(time.time()-start)
     # print(''.join(map(str, pi_list)))
 
