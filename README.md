@@ -1,6 +1,6 @@
 # Calculate &pi; (pi)
 
-Simple overview of use/purpose.
+This calculates as many digits of pi as possible.
 
 ## Description
 
