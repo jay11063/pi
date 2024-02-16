@@ -1,6 +1,6 @@
 # Calculate &pi; (pi)
 
-Simple overview of use/purpose.
+This calculates as many digits of pi as possible.
 
 ## Description
 
@@ -10,20 +10,11 @@ An in-depth paragraph about your project and overview of use.
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Python 3.10
 
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
+### Run
 ```
-code blocks for commands
+python get_pi.py
 ```
 
 ## Help
@@ -35,22 +26,9 @@ command to run if program contains helper info
 
 ## Authors
 
-Contributors names and contact info
-
 Jaeyoon Lee
 
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-<!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
