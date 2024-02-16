@@ -1,19 +1,26 @@
 import matplotlib.pyplot as plt
 from get_pi import *
 
+# constants for a polynomial function
+a = 10**(-10)
+b = 2.86
+
 
 def draw_graph(time_data):
     plt.figure(figsize=(6, 4))
 
     data = list(map(list, zip(*time_data)))
 
-    plt.plot(data[0],data[1], '-r', linewidth=0.5)
+    # draw a polynomial function graph [y=a*x^b]
+    plt.plot(range(10000),[a*i**b for i in range(10000)], linewidth=0.8)
+
+    plt.plot(data[0],data[1], '-r')
 
     plt.ylabel('time (s)')
     plt.xlabel('n digits')
     plt.title('Time complexity')
     plt.axis([0, 10100, 0, 30])
-    plt.legend()
+    plt.legend(('y=a*x^b','data'))
     plt.show()
 
 
@@ -28,7 +35,7 @@ def time_complexity():
 
         data.append((check_pi_with_file(pi), time.time()-start))
 
-    print(data)
+    # print(data)
     draw_graph(data)
 
 if __name__=="__main__":

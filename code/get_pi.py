@@ -34,25 +34,30 @@ def check_pi_with_file(pi_str:str) -> int:
     txt_file.close()
     return count
 
-# This function provides a list of range tuples
+# This function provides a list of range tuples / ex) get_range(100,10) -> [(1,10),(11,20),(21,30),...,(91,100)]
 def get_ranges(Max,step):
     return [(1+i*step,(1+i)*step) for i in range(Max//step)]
 
+# This function reduces the decimal output of pi
+def print_big_pi(pi:str,start_digits:int=20,end_digits:int=20):
+    if len(pi) > start_digits+end_digits:
+        return pi[:start_digits] + f' ... {len(pi)-40} digits ... ' + pi[-1*end_digits:]
+    return pi
 
 def main():
     start = time.time()
     num_cores = 4
     pool = Pool(num_cores)
 
-    list_pi = frac_to_dec_list(sum_of_fracs(pool.map(calc_pi_fraction, get_ranges(Max=100,step=10))))
+    list_pi = frac_to_dec_list(sum_of_fracs(pool.map(calc_pi_fraction, get_ranges(Max=7200,step=72))))
     print('TOTAL_TIME:',time.time()-start)
 
     pi = ''.join(map(str, list_pi))
-    print('\nCalculated:', pi)
+    print('\nCalculated:', print_big_pi(pi))
 
     count = check_pi_with_file(pi)
 
-    print('Matched:   ',pi[:count])
+    print('Matched:   ',print_big_pi(pi[:count]))
     # print('Actual pi: ',txt_pi[:count+5],'\n')
     # print(count/len(pi), count,'/',len(pi))
 
