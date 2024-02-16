@@ -45,6 +45,7 @@ def main():
     pool = Pool(num_cores)
 
     list_pi = frac_to_dec_list(sum_of_fracs(pool.map(calc_pi_fraction, get_ranges(Max=100,step=10))))
+    print('TOTAL_TIME:',time.time()-start)
 
     pi = ''.join(map(str, list_pi))
     print('\nCalculated:', pi)
@@ -54,7 +55,6 @@ def main():
     print('Matched:   ',pi[:count])
     # print('Actual pi: ',txt_pi[:count+5],'\n')
     # print(count/len(pi), count,'/',len(pi))
-    print('TOTAL_TIME:',time.time()-start)
 
     # Save digits
     # save_file_name = os.path.join(current_path, f'pi_calculated({count:,}).txt')
