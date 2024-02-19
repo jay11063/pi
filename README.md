@@ -24,7 +24,6 @@ it took approximately 7 hours to compute 100,000 digits.
 ### Dependencies
 
 * Python 3.10
-* Matplotlib 3.6.0
 
 ### Run
 ```
