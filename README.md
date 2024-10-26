@@ -30,13 +30,6 @@ it took approximately 7 hours to compute 100,000 digits.
 python get_pi.py
 ```
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
 ## Analysis
 
 ### Time complexity graph of algorithm using Machin-like formula
