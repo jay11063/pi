@@ -13,6 +13,7 @@ def calc_pi_fraction(Range:tuple[int,int]) -> Fraction:
     pi = Fraction()
     k = Range[0]
     while k <= Range[1]:
+        # Canceled out the common factor of 4 in the original expression, then multiplied by 4 during the decimal conversion process on line 27
         pi += Fraction((4*(-1)**(k-1)),(2*k-1)*5**(2*k-1)) - Fraction((-1)**(k-1),(2*k-1)*239**(2*k-1))
         k += 1
     # print(end,'CALCULATE_TIME:',time.time()-start)
@@ -24,7 +25,7 @@ def frac_to_dec_list(frac:Fraction) -> list[int]:
     pi_ratio = frac.as_integer_ratio() # Fraction => tuple(nominator, denominator)
     pi = []
     rem = 10*(4*pi_ratio[0]%pi_ratio[1]) # remainder
-    for _ in range(int(log10(pi_ratio[0])/4)): # divide by 4 to reduce unnecessary calculations
+    for _ in range(int(log10(pi_ratio[0])/4)): # divide by 4 to reduce unnecessary calculations with imprecise figures
         pi.append(rem//pi_ratio[1])
         rem = 10*(rem%pi_ratio[1])
     # print('CONVERT_TIME:',time.time()-start)
